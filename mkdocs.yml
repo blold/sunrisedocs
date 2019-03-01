@@ -5,6 +5,7 @@ date: 2018-12-23
 theme: readthedocs
 nav:
     - '开始': 'index.md'
+    - '如何下载及更新CMS': 'download.md'
     - '如何部署': 'deploy.md'
     - '页面-主页': 'homepage.md'
     - '页面-关于': 'aboutpage.md'
