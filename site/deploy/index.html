@@ -147,53 +147,45 @@
             <div class="section">
               
                 <h1 id="_1">如何部署</h1>
-<p>此篇幅讲述如何安装部署这个网站cms， 分成三部分服务器， 数据库和如何部署运行</p>
+<p>v.0.5
+此篇幅讲述如何安装部署这个网站cms， 分成三部分服务器， 数据库和如何部署运行</p>
 <hr />
 <h2 id="_2">服务器</h2>
-<ol>
-<li>
 <p>安装Ubuntu 16.04.4 LTS, 参考https://blog.csdn.net/flyyufenfei/article/details/79187656</p>
-</li>
-<li>
 <p>安装 nodejs 环境， 在命令行里</p>
-</li>
-</ol>
-<p><code>sudo apt-get update
-   sudo apt-get install nodejs
-   sudo apt-get install npm</code></p>
-<ol>
-<li>检查安装成功, 在命令行里输入，</li>
-</ol>
-<p><code>npm -v
-   nodejs -v</code></p>
+<pre><code>sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+</code></pre>
+
+<p>检查安装成功, 在命令行里输入</p>
+<pre><code>npm -v
+nodejs -v
+</code></pre>
+
+<hr />
 <h2 id="_3">数据库</h2>
 <p>安装mongodb 数据库， 这里给出的官方安装方法，还有很多不同安装办法可百度。监控软件可以考虑studio 3T</p>
 <h3 id="_4">方法一 （官网）</h3>
-<ol>
-<li>
 <p>第一步, 命令行运行</p>
-</li>
-<li>
-<p><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4</code></p>
-</li>
-<li>
+<pre><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+</code></pre>
+
 <p>第二步</p>
-</li>
-</ol>
-<p><code>echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list</code></p>
-<ol>
-<li>第三步</li>
-</ol>
-<p><code>sudo apt-get update
-   sudo apt-get update</code></p>
-<ol>
-<li>第四步</li>
-</ol>
-<p><code>sudo apt-get install -y mongodb-org
-   sudo apt-get install -y mongodb-org</code></p>
-<ol>
-<li>第五步，监控</li>
-</ol>
+<pre><code>echo &quot;deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+</code></pre>
+
+<p>第三步</p>
+<pre><code>sudo apt-get update
+sudo apt-get update
+</code></pre>
+
+<p>第四步</p>
+<pre><code>sudo apt-get install -y mongodb-org
+sudo apt-get install -y mongodb-org
+</code></pre>
+
+<p>第五步，监控</p>
 <pre><code>//开始mongodb
 sudo service mongod start 或者直接在mongodb根目录运行./mongod
 
@@ -206,34 +198,34 @@ sudo service mongod restart
 
 <p>数据库监控软件可以考虑studio 3T, 链接如下</p>
 <p>https://studio3t.com/download/</p>
+<hr />
 <h2 id="_5">部署</h2>
-<ol>
-<li>安装 yarn</li>
-</ol>
-<p><code>sudo apt-get update &amp;&amp; sudo apt-get install yarn</code></p>
-<ol>
-<li>进入到项目根目录， 安装依赖包</li>
-</ol>
-<p><code>yarn install</code></p>
-<ol>
-<li>运行部署</li>
-</ol>
-<p><code>yarn run prod</code></p>
-<ol>
-<li>监控运行， 可以支持远程在线监控，更多详情可以参考http://pm2.keymetrics.io/， 此部分还会未来完善。。。</li>
-</ol>
-<p><code>//监控运行状态
-   sudo pm2 list
-   //删除该部署
-   pm2 delete [id]
-   //重启
-   pm2 restart [id]
-   //查看运行日志
-   sudo pm2 logs 
-   //重启anyproxy
-   sudo pm2 restart [id]
-   //监控内存占用
-   sudo pm2 monit</code></p>
+<p>安装 yarn</p>
+<pre><code>sudo apt-get update &amp;&amp; sudo apt-get install yarn
+</code></pre>
+
+<p>进入到项目根目录， 安装依赖包</p>
+<pre><code>yarn install
+</code></pre>
+
+<p>运行部署</p>
+<pre><code>yarn run prod
+</code></pre>
+
+<p>监控运行， 可以支持远程在线监控，更多详情可以参考http://pm2.keymetrics.io/， 此部分还会未来完善。。。</p>
+<pre><code>//监控运行状态
+sudo pm2 list
+//删除该部署
+pm2 delete [id]
+//重启
+pm2 restart [id]
+//查看运行日志
+sudo pm2 logs 
+//重启anyproxy
+sudo pm2 restart [id]
+//监控内存占用
+sudo pm2 monit
+</code></pre>
               
             </div>
           </div>
