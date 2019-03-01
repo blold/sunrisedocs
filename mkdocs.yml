@@ -1,10 +1,11 @@
 site_name: SUNRISE
-summary: 该网站是SUNRISE 官网后台管理系统说明文档
+summary: 该网站是SUNRISE 官网后台管理系统说明文档 v0.9
 authors: Andy
 date: 2018-12-23
 theme: readthedocs
 nav:
     - '开始': 'index.md'
+    - '如何部署': 'deploy.md'
     - '页面-主页': 'homepage.md'
     - '页面-关于': 'aboutpage.md'
     - '页面-解决方案': 'solutions.md'
