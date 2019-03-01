@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>页面-关于 - SUNRISE</title>
+  <title>如何部署 - SUNRISE</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\u9875\u9762-\u5173\u4e8e";
-    var mkdocs_page_input_path = "aboutpage.md";
+    var mkdocs_page_name = "\u5982\u4f55\u90e8\u7f72";
+    var mkdocs_page_input_path = "deploy.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -53,9 +53,25 @@
     <a class="" href="..">开始</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../deploy/">如何部署</a>
+    <a class="current" href="./">如何部署</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#_1">如何部署</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#_2">服务器</a></li>
+        
+            <li><a class="toctree-l3" href="#_3">数据库</a></li>
+        
+            <li><a class="toctree-l3" href="#_5">部署</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -63,25 +79,9 @@
     <a class="" href="../homepage/">页面-主页</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">页面-关于</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#-">关于我们-页面</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#_1">开始</a></li>
-        
-            <li><a class="toctree-l3" href="#_2">公司介绍</a></li>
-        
-            <li><a class="toctree-l3" href="#_3">理念</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../aboutpage/">页面-关于</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -136,7 +136,7 @@
     
       
     
-    <li>页面-关于</li>
+    <li>如何部署</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -146,27 +146,90 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="-">关于我们-页面</h1>
-<p>此页讲述大部分关于“关于我们”页面的内容管理。</p>
+                <h1 id="_1">如何部署</h1>
+<p>此篇幅讲述如何安装部署这个网站cms， 分成三部分服务器， 数据库和如何部署运行</p>
 <hr />
-<h2 id="_1">开始</h2>
-<p><img alt="Screenshot" src="../img/about/about0.png" /></p>
-<p><img alt="Screenshot" src="../img/about/about_cms1.png" /></p>
-<ul>
-<li>创建新的“关于我们”内容设定</li>
-</ul>
-<p><img alt="Screenshot" src="../img/about/about_cms2.png" /></p>
-<ul>
-<li>这是默认设定，点击create</li>
-</ul>
-<hr />
-<h2 id="_2">公司介绍</h2>
-<p><img alt="Screenshot" src="../img/about/about1.png" /></p>
-<p><img alt="Screenshot" src="../img/about/about_cms3.png" /></p>
-<hr />
-<h2 id="_3">理念</h2>
-<p><img alt="Screenshot" src="../img/about/about_cms4.png" /></p>
-<p><img alt="Screenshot" src="../img/about/about_cms5.png" /></p>
+<h2 id="_2">服务器</h2>
+<ol>
+<li>
+<p>安装Ubuntu 16.04.4 LTS, 参考https://blog.csdn.net/flyyufenfei/article/details/79187656</p>
+</li>
+<li>
+<p>安装 nodejs 环境， 在命令行里</p>
+</li>
+</ol>
+<p><code>sudo apt-get update
+   sudo apt-get install nodejs
+   sudo apt-get install npm</code></p>
+<ol>
+<li>检查安装成功, 在命令行里输入，</li>
+</ol>
+<p><code>npm -v
+   nodejs -v</code></p>
+<h2 id="_3">数据库</h2>
+<p>安装mongodb 数据库， 这里给出的官方安装方法，还有很多不同安装办法可百度。监控软件可以考虑studio 3T</p>
+<h3 id="_4">方法一 （官网）</h3>
+<ol>
+<li>
+<p>第一步, 命令行运行</p>
+</li>
+<li>
+<p><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4</code></p>
+</li>
+<li>
+<p>第二步</p>
+</li>
+</ol>
+<p><code>echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list</code></p>
+<ol>
+<li>第三步</li>
+</ol>
+<p><code>sudo apt-get update
+   sudo apt-get update</code></p>
+<ol>
+<li>第四步</li>
+</ol>
+<p><code>sudo apt-get install -y mongodb-org</code></p>
+<pre><code>//开始mongodb
+sudo service mongod start 或者直接在mongodb根目录运行./mongod
+
+//关闭
+sudo service mongod stop
+
+//重启
+sudo service mongod restart
+</code></pre>
+
+<p>数据库监控软件可以考虑studio 3T, 链接如下</p>
+<p>https://studio3t.com/download/</p>
+<h2 id="_5">部署</h2>
+<ol>
+<li>安装 yarn</li>
+</ol>
+<p><code>sudo apt-get update &amp;&amp; sudo apt-get install yarn</code></p>
+<ol>
+<li>进入到项目根目录， 安装依赖包</li>
+</ol>
+<p><code>yarn install</code></p>
+<ol>
+<li>运行部署</li>
+</ol>
+<p><code>yarn run prod</code></p>
+<ol>
+<li>监控运行， 可以支持远程在线监控，更多详情可以参考http://pm2.keymetrics.io/， 此部分还会未来完善。。。</li>
+</ol>
+<p><code>//监控运行状态
+   sudo pm2 list
+   //删除该部署
+   pm2 delete [id]
+   //重启
+   pm2 restart [id]
+   //查看运行日志
+   sudo pm2 logs 
+   //重启anyproxy
+   sudo pm2 restart [id]
+   //监控内存占用
+   sudo pm2 monit</code></p>
               
             </div>
           </div>
@@ -174,10 +237,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../solutions/" class="btn btn-neutral float-right" title="页面-解决方案">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../homepage/" class="btn btn-neutral float-right" title="页面-主页">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../homepage/" class="btn btn-neutral" title="页面-主页"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral" title="开始"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -203,10 +266,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../homepage/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../solutions/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../homepage/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
