@@ -97,9 +97,9 @@ https://studio3t.com/download/
 
 1. 在ubuntu根目录， 运行如下命令
 
-   ``` 
-   mongodump --db sunrise(database_name)
-   ```
+```
+mongodump --db sunrise(database_name)
+```
 
 2. 此时会在当前文件夹生成一个dump文件夹，里面包含数据库文件
 
@@ -109,9 +109,9 @@ https://studio3t.com/download/
 
 1. 在包含数据库文件夹dump的目录下， 运行如下命令
 
-   ``` 
-   mongoretore --db sunrise ./dump/sunrise/
-   ```
+```
+mongoretore --db sunrise ./dump/sunrise/
+```
 
 2. 重启数据库和重启cms系统（pm2 restart x）
 
