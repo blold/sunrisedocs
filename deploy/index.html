@@ -71,7 +71,9 @@
         
             <li><a class="toctree-l3" href="#_3">数据库</a></li>
         
-            <li><a class="toctree-l3" href="#_5">部署</a></li>
+            <li><a class="toctree-l3" href="#_5">数据库备份及恢复</a></li>
+        
+            <li><a class="toctree-l3" href="#_8">部署</a></li>
         
         </ul>
     
@@ -203,8 +205,25 @@ sudo service mongod restart
 
 <p>数据库监控软件可以考虑studio 3T, 链接如下</p>
 <p>https://studio3t.com/download/</p>
+<h2 id="_5">数据库备份及恢复</h2>
+<h3 id="_6">备份</h3>
+<ol>
+<li>在ubuntu根目录， 运行如下命令</li>
+</ol>
+<p><code>mongodump --db sunrise(database_name)</code></p>
+<ol>
+<li>此时会在当前文件夹生成一个dump文件夹，里面包含数据库文件</li>
+</ol>
+<h3 id="_7">恢复</h3>
+<ol>
+<li>在包含数据库文件夹dump的目录下， 运行如下命令</li>
+</ol>
+<p><code>mongoretore --db sunrise ./dump/sunrise/</code></p>
+<ol>
+<li>重启数据库和重启cms系统（pm2 restart x）</li>
+</ol>
 <hr />
-<h2 id="_5">部署</h2>
+<h2 id="_8">部署</h2>
 <p>安装 yarn</p>
 <pre><code>sudo apt-get update &amp;&amp; sudo apt-get install yarn
 </code></pre>
