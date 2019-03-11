@@ -210,7 +210,9 @@ sudo service mongod restart
 <ol>
 <li>在ubuntu根目录， 运行如下命令</li>
 </ol>
-<p><code>mongodump --db sunrise(database_name)</code></p>
+<pre><code>mongodump --db sunrise(database_name)
+</code></pre>
+
 <ol>
 <li>此时会在当前文件夹生成一个dump文件夹，里面包含数据库文件</li>
 </ol>
@@ -218,7 +220,9 @@ sudo service mongod restart
 <ol>
 <li>在包含数据库文件夹dump的目录下， 运行如下命令</li>
 </ol>
-<p><code>mongoretore --db sunrise ./dump/sunrise/</code></p>
+<pre><code>mongoretore --db sunrise ./dump/sunrise/
+</code></pre>
+
 <ol>
 <li>重启数据库和重启cms系统（pm2 restart x）</li>
 </ol>
